@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Есть список песен группы Depeche Mode со временем звучания с точносттю до долей минут
+# Есть список песен группы Depeche Mode со временем звучания с точностью до долей минут
 
 violator_songs_list = [
     ['World in My Eyes', 4.86],
