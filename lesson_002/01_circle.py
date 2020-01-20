@@ -29,7 +29,6 @@ point = (23, 34)
 point_radius = ((0 - point[0]) ** 2 + (0 - point[1]) ** 2) ** 0.5
 print(radius > point_radius)
 
-
 # Аналогично для другой точки
 point_2 = (30, 30)
 # Если точка point_2 лежит внутри круга (radius = 42), то выведите на консоль True,
@@ -47,4 +46,3 @@ print(radius > point_2_radius)
 # 5541.7693464
 # True
 # False
-

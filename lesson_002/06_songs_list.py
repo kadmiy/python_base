@@ -24,7 +24,7 @@ halo_song = violator_songs_list[3][1]
 enjoy_song = violator_songs_list[5][1]
 clean_song = violator_songs_list[8][1]
 summa_songs = halo_song + enjoy_song + clean_song
-print('Три песни звучат -', summa_songs, 'минут' )
+print('Три песни звучат -', summa_songs, 'минут')
 
 # Есть словарь песен группы Depeche Mode
 violator_songs_dict = {
