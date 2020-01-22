@@ -23,10 +23,11 @@ for current_color in rainbow_colors:
 # Усложненное задание, делать по желанию.
 # Нарисовать радугу дугами от окружности (cсм sd.circle) за нижним краем экрана,
 # поэкспериментировать с параметрами, что бы было красиво
-# sd.resolution = (500, 500)
-# for current_color in rainbow_colors:
-#     start_point = sd.get_point(start_x, start_y)
-#     end_point = sd.get_point(end_x, end_y)
-
+start_x, start_y = 250, 0
+sd.resolution = (500, 500)
+for current_color in rainbow_colors:
+    center_position = sd.get_point(start_x, start_y)
+    sd.circle(center_position=center_position, radius=400, color=current_color, width=15)
+    start_y -= 15
 
 sd.pause()
