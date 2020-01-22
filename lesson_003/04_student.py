@@ -11,4 +11,11 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
+expenses_calculate, expenses_total = expenses, expenses
+i = 1
+while i < 10:
+    expenses_calculate = expenses_calculate * 1.03
+    expenses_total = expenses_total + expenses_calculate
+    i += 1
+result = expenses_total - educational_grant * 10
+print('Студенту надо попросить', result, 'рублей.')
