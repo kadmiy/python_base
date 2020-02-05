@@ -13,7 +13,7 @@ def polygons(f_radius, f_heads, f_angle, f_side, f_start_angle):
     turtle.right(f_start_angle)
 
 
-radius = step_radius = 15
+radius = step_radius = 20
 turtle.shape('turtle')
 # turtle.shape('classic')
 # turtle.speed(speed=1)
