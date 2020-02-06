@@ -10,3 +10,4 @@ for i in range(7):
     turtle.circle(-radius, 180)
     if i < 6:
         turtle.circle(-radius / 5, 180)
+turtle.exitonclick()

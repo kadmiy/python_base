@@ -7,4 +7,5 @@ for i in range(12):
     turtle.left(180)
     turtle.forward(50)
     turtle.left(150)
+turtle.exitonclick()
 

@@ -23,3 +23,4 @@ for heads in range(3, 13, 1):
     side = 2 * cos(radians(start_angle)) * radius
     polygons(step_radius, heads, angle, side, start_angle)
     radius += step_radius
+turtle.exitonclick()

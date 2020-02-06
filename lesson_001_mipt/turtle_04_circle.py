@@ -8,3 +8,4 @@ turtle.shape('turtle')
 for x in range(36):
     turtle.forward(20)
     turtle.left(10)
+turtle.exitonclick()

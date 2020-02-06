@@ -13,4 +13,5 @@ for i in range(10):
         turtle.forward(10)
     turtle.right(180)
     turtle.pendown()
+turtle.exitonclick()
 

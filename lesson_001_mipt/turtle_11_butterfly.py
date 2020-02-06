@@ -7,3 +7,4 @@ for _ in range(10):
     turtle.circle(radius)
     turtle.circle(-radius)
     radius += 5
+turtle.exitonclick()

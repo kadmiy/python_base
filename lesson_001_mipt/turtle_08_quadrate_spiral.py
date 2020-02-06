@@ -7,3 +7,4 @@ for i in range(10):
         turtle.forward(side)
         turtle.left(90)
         side += 10
+turtle.exitonclick()
