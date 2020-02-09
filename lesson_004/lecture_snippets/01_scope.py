@@ -31,6 +31,7 @@ def simple_2():
     print('simple_2:', x + y)
     # print('simple_2:', c + d)
 
+
 simple()
 simple_2()
 print('global:', c + d)
@@ -69,6 +70,7 @@ print('global', a+b)
 # Если переменной нет в локальном namespace, то значение берется из глобального namespace
 a, b = 1, 2
 print('global:', a+b)
+
 
 def simple():
     # Локальное пространство имен
