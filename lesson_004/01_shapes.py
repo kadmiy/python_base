@@ -111,27 +111,38 @@ import simple_draw as sd
 # Не забудте в этой общей функции придумать, как устранить разрыв
 #   в начальной/конечной точках рисуемой фигуры (если он есть)
 
+def vector(vector_start, length, angle):
+    v = sd.get_vector(vector_start, angle, length)
+    return v.end_point
+
 
 def polygon(point, heads, length):
-    angle_start = 0
-    angle = 360 / heads
+    angle_start = 15
+    angle_polygon = 360 / heads
+    point_polygon = point
     for _ in range(heads):
-        t = sd.get_vector(point, angle_start, length, 5)
-        sd.line(start_point=point, end_point=t.end_point, color=sd.COLOR_YELLOW, width=1)
+        if _ == 0:
+            angle = angle_start
+        else:
+            angle += angle_polygon
+        if _ < (heads-1):
+            end_point = vector(point, length, angle)
+        else:
+            end_point = point_polygon
+        sd.line(start_point=point, end_point=end_point, color=sd.COLOR_YELLOW, width=1)
+        point = end_point
         # t2 = sd.get_vector(t1.end_point, angle + 120, length, 5)
         # sd.line(start_point=t1.end_point, end_point=t2.end_point, color=sd.COLOR_YELLOW, width=1)
         # sd.line(start_point=t2.end_point, end_point=point, color=sd.COLOR_YELLOW, width=1)
 
 
-start_point = [(100, 100), (350, 100), (100, 350), (350, 350)]
-heads_start = 3
+start_point = [(100, 100, 150, 3), (350, 100, 150, 4), (100, 350, 100, 5), (350, 350, 100, 6)]
 
-
-for point_start in start_point:
-    point_start = sd.get_point(point_start[0], point_start[1])
-    polygon(point_start, heads_start, 200)
-    heads_start += 1
-    # pass
+for _ in start_point:
+    point_start = sd.get_point(_[0], _[1])
+    length_start = _[2]
+    heads_start = _[3]
+    polygon(point_start, heads_start, length_start)
 
 
 # Часть 2-бис.
