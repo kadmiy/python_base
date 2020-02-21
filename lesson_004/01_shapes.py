@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import simple_draw as sd
 
 
@@ -94,8 +93,8 @@ import simple_draw as sd
 # Скажем, связывать точки не линиями, а дугами. Или двойными линиями. Или рисовать круги в угловых точках. Или...
 # А если таких функций не 4, а 44?
 
-# Если использовать принцип "Copy-Paste" получится просто невероятное количество строк кода,
-# равно как и ошибок в них.
+# ___ Если использовать принцип "Copy-Paste" получится просто невероятное количество строк кода,
+# ___ равно как и ошибок в них.
 
 
 # Часть 2 (делается после зачета первой части)
@@ -111,6 +110,7 @@ import simple_draw as sd
 # Не забудте в этой общей функции придумать, как устранить разрыв
 #   в начальной/конечной точках рисуемой фигуры (если он есть)
 
+
 def vector(vector_start, length, angle):
     v = sd.get_vector(vector_start, angle, length)
     return v.end_point
@@ -125,7 +125,7 @@ def polygon(point, heads, length):
             angle = angle_start
         else:
             angle += angle_polygon
-        if _ < (heads-1):
+        if _ < (heads - 1):
             end_point = vector(point, length, angle)
         else:
             end_point = point_polygon
@@ -136,6 +136,7 @@ def polygon(point, heads, length):
         # sd.line(start_point=t2.end_point, end_point=point, color=sd.COLOR_YELLOW, width=1)
 
 
+# (point_start_x, point_start_y, length_start, type_of_polygon)
 start_point = [(100, 100, 150, 3), (350, 100, 150, 4), (100, 350, 100, 5), (350, 350, 100, 6)]
 
 for _ in start_point:
@@ -144,11 +145,12 @@ for _ in start_point:
     heads_start = _[3]
     polygon(point_start, heads_start, length_start)
 
-
 # Часть 2-бис.
 # А теперь - сколько надо работы что бы внести изменения в код? Выгода на лицо :)
 # Поэтому среди программистов есть принцип D.R.Y. https://clck.ru/GEsA9
 # Будьте ленивыми, не используйте копи-пасту!
+
+# ___ Не то слово, через вызов функции в цикле читаем из списка параметры многоугольника
 
 
 sd.pause()
