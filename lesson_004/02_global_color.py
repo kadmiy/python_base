@@ -25,6 +25,7 @@ def vector(vector_start, length, angle):
 
 
 def polygon(point, heads, length, color):
+    angle = 0
     angle_start = 15
     angle_polygon = 360 / heads
     point_polygon = point
