@@ -21,13 +21,12 @@ def polygon(heads, length, color):
     color_rainbow = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
                      sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
     angle = 0
-    angle_start = 15
+    angle_start = 0
     angle_polygon = 360 / heads
     radius = length / (2 * cos(radians(angle_polygon / 2)))
-    point = vector(sd.get_point(300, 300), radius, (180 - angle_polygon) / 2)
-    x = 300 - (point.x - 300)
-    y = 300 - (point.y - 300)
-    point = sd.get_point(x, y)
+    point = vector(sd.get_point(300, 300), radius, -120)
+    # point = sd.get_point(x, y)
+    # point = sd.get_point(300, 300)
     point_polygon = point
     color_paint = color_rainbow[color - 1]
     sd.circle(center_position=sd.get_point(300, 300), radius=2, color=color_rainbow[0], width=1)
@@ -66,7 +65,7 @@ while color_input:
     else:
         print('Неверный ввод')
         continue
-    heads_input = input('Введите количество вершин многоугольника:')
+    heads_input = input('Введите количество вершин многоугольника:\n')
     if heads_input.isnumeric():
         heads_input = int(heads_input)
         if heads_input < 3:
