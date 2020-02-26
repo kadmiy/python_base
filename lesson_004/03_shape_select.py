@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from math import cos, radians
+from math import sin, radians
 
 import simple_draw as sd
 
@@ -17,19 +17,20 @@ def vector(vector_start, length, angle):
     return v.end_point
 
 
-def polygon(heads, length, color):
+def polygon(heads, color):
     color_rainbow = (sd.COLOR_RED, sd.COLOR_ORANGE, sd.COLOR_YELLOW, sd.COLOR_GREEN,
                      sd.COLOR_CYAN, sd.COLOR_BLUE, sd.COLOR_PURPLE)
+    length = 150
+    center = sd.get_point(300, 300)
     angle = 0
     angle_start = 0
     angle_polygon = 360 / heads
-    radius = length / (2 * cos(radians(angle_polygon / 2)))
-    point = vector(sd.get_point(300, 300), radius, -120)
-    # point = sd.get_point(x, y)
-    # point = sd.get_point(300, 300)
+    angle_center = angle_polygon / 2
+    radius = length / (2 * sin(radians(angle_center)))
+    point = vector(center, radius, -(90 + angle_center))
     point_polygon = point
     color_paint = color_rainbow[color - 1]
-    sd.circle(center_position=sd.get_point(300, 300), radius=2, color=color_rainbow[0], width=1)
+    sd.circle(center_position=center, radius=2, color=color_rainbow[0], width=1)
     for _ in range(heads):
         if _ == 0:
             angle = angle_start
@@ -65,17 +66,15 @@ while color_input:
     else:
         print('Неверный ввод')
         continue
-    heads_input = input('Введите количество вершин многоугольника:\n')
-    if heads_input.isnumeric():
-        heads_input = int(heads_input)
-        if heads_input < 3:
+    heads_start = input('Введите количество вершин многоугольника:\n')
+    if heads_start.isnumeric():
+        heads_start = int(heads_start)
+        if heads_start < 3:
             print('Построение многоугольника невозвожно!')
             continue
     else:
         print('Неверный ввод')
         continue
-    length_start = 150
-    heads_start = heads_input
-    polygon(heads_start, length_start, color_input)
+    polygon(heads_start, color_input)
     break
 sd.pause()
