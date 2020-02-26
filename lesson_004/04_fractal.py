@@ -27,23 +27,24 @@ import simple_draw as sd
 # можно поиграть -шрифтами- цветами и углами отклонения
 
 
-def draw_bunches(point_start, angle_start, length_start):
-    angle_list = (-30, 30)
-    for angle_delta in angle_list:
-        angle = angle_start + angle_delta
-        point_end_f = sd.get_vector(point_start, angle, length_start).end_point
-        sd.line(start_point=point_start, end_point=point_end_f, color=sd.COLOR_YELLOW, width=1)
-        while length_start > 75:
-            draw_bunches(point_end_f, angle, length_start*.75)
-
-
-angle_root = 90
-length_root = 100
-point_root = sd.get_point(300, 0)
-point_end = sd.get_vector(point_root, angle_root, length_root/2).end_point
-sd.line(start_point=point_root, end_point=point_end, color=sd.COLOR_YELLOW, width=1)
-
-draw_bunches(point_end, angle_root, length_root)
+# Часть 1
+# def draw_bunches(point_start, angle_start, length_start):
+#     if length_start < 10:
+#         return
+#     angle_list = (-30, 30)
+#     for angle_delta in angle_list:
+#         angle = angle_start + angle_delta
+#         point_end_f = sd.get_vector(point_start, angle, length_start).end_point
+#         sd.line(start_point=point_start, end_point=point_end_f, color=sd.COLOR_YELLOW, width=1)
+#         draw_bunches(point_end_f, angle, length_start * .75)
+#
+#
+# angle_root = 90
+# length_root = 100
+# point_root = sd.get_point(300, 0)
+# point_end = sd.get_vector(point_root, angle_root, length_root/2).end_point
+# sd.line(start_point=point_root, end_point=point_end, color=sd.COLOR_YELLOW, width=1)
+# draw_bunches(point_end, angle_root, length_root)
 
 # 4) Усложненное задание (делать по желанию)
 # - сделать рандомное отклонение угла ветвей в пределах 40% от 30-ти градусов
@@ -52,6 +53,7 @@ draw_bunches(point_end, angle_root, length_root)
 
 # Пригодятся функции
 # sd.random_number()
+
 
 sd.pause()
 
