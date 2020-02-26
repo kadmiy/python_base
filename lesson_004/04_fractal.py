@@ -45,7 +45,6 @@ sd.line(start_point=point_root, end_point=point_end, color=sd.COLOR_YELLOW, widt
 
 draw_bunches(point_end, angle_root, length_root)
 
-
 # 4) Усложненное задание (делать по желанию)
 # - сделать рандомное отклонение угла ветвей в пределах 40% от 30-ти градусов
 # - сделать рандомное отклонение длины ветвей в пределах 20% от коэффициента 0.75
