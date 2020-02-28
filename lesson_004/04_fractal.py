@@ -56,8 +56,9 @@ import simple_draw as sd
 # sd.random_number()
 
 
+# Часть 2
 def draw_bunches(point_start, angle_start, length_start):
-    if length_start < 1:
+    if length_start < 5:
         return
     angle_list = (-30, 30)
     for angle_delta in angle_list:
